@@ -1,0 +1,626 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Devotion to the Holy Face of Jesus</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,500;0,600;1,400&family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --vellum: #f4ead4;
+    --vellum-deep: #ecdfc2;
+    --parchment-card: #fbf5e6;
+    --ink: #2b1d15;
+    --ink-dim: #5d4a3b;
+    --gold: #b8902a;
+    --gold-line: rgba(184,144,42,0.55);
+    --gold-faint: rgba(184,144,42,0.22);
+    --oxblood: #8a1c26;
+    --oxblood-wash: rgba(138,28,38,0.08);
+    --oxblood-line: rgba(138,28,38,0.35);
+  }
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    margin: 0;
+    background:
+      radial-gradient(ellipse 900px 500px at 50% -10%, rgba(184,144,42,0.16), transparent 60%),
+      var(--vellum);
+    color: var(--ink);
+    font-family: 'EB Garamond', serif;
+    -webkit-font-smoothing: antialiased;
+    line-height: 1.65;
+  }
+  .wrap { max-width: 640px; margin: 0 auto; padding: 3.2rem 1.4rem 4rem; }
+  .ornament {
+    text-align: center;
+    color: var(--gold);
+    letter-spacing: 0.3em;
+    opacity: 0.9;
+    margin-bottom: 1.4rem;
+  }
+  h1 {
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 500;
+    text-align: center;
+    font-size: clamp(2.1rem, 8vw, 3rem);
+    line-height: 1.15;
+    letter-spacing: 0.01em;
+    margin: 0 0 0.6rem;
+    color: var(--ink);
+  }
+  .subhead {
+    text-align: center;
+    font-style: italic;
+    color: var(--oxblood);
+    font-size: 1.15rem;
+    font-weight: 400;
+    margin: 0 0 2.2rem;
+    letter-spacing: 0.01em;
+  }
+  .intro {
+    text-align: center;
+    color: var(--ink-dim);
+    font-size: 1.08rem;
+    max-width: 46ch;
+    margin: 0 auto 3rem;
+  }
+  .howto {
+    border: 1px solid var(--gold-line);
+    background: var(--parchment-card);
+    border-radius: 2px;
+    padding: 1.9rem 1.7rem;
+    margin-bottom: 3.2rem;
+  }
+  .eyebrow {
+    font-family: 'EB Garamond', serif;
+    font-size: 0.78rem;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--oxblood);
+    text-align: center;
+    margin: 0 0 1.1rem;
+    font-weight: 600;
+  }
+  .howto ul { list-style: none; margin: 0; padding: 0; }
+  .howto li {
+    position: relative;
+    padding-left: 1.4rem;
+    margin-bottom: 0.75rem;
+    color: var(--ink);
+    font-size: 1.02rem;
+  }
+  .howto li:last-child { margin-bottom: 0; }
+  .howto li::before {
+    content: '\2725';
+    position: absolute;
+    left: 0;
+    color: var(--oxblood);
+    font-size: 0.85rem;
+    top: 0.2rem;
+  }
+  .howto strong { color: var(--ink); font-weight: 600; }
+  nav.jump {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.5rem;
+    margin: 0 0 3rem;
+  }
+  nav.jump a {
+    font-size: 0.82rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--oxblood);
+    text-decoration: none;
+    border: 1px solid var(--oxblood-line);
+    background: var(--oxblood-wash);
+    border-radius: 100px;
+    padding: 0.4rem 0.95rem;
+    font-weight: 600;
+  }
+  nav.jump.days a { padding: 0.4rem 0.8rem; min-width: 2.4rem; text-align: center; }
+  .part-head { text-align: center; margin: 4rem 0 2.2rem; scroll-margin-top: 1rem; }
+  .part-head .ornament { margin-bottom: 0.9rem; }
+  .part-head h2 {
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 500;
+    font-size: clamp(1.7rem, 6vw, 2.2rem);
+    margin: 0 0 0.4rem;
+    line-height: 1.2;
+  }
+  .part-head p {
+    margin: 0 auto;
+    max-width: 46ch;
+    color: var(--ink-dim);
+    font-size: 1.04rem;
+  }
+  .part-head .subhead { margin-bottom: 1rem; font-size: 1.05rem; }
+  .divider { text-align: center; margin: 2.6rem 0; position: relative; color: var(--gold); }
+  .divider span { background: var(--vellum); padding: 0 1rem; position: relative; letter-spacing: 0.3em; }
+  .divider::before, .divider::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    width: calc(50% - 3rem);
+    height: 1px;
+    background: var(--gold-line);
+  }
+  .divider::before { left: 0; }
+  .divider::after { right: 0; }
+  .prayer { scroll-margin-top: 1rem; }
+  .numeral-row { display: flex; align-items: baseline; gap: 0.9rem; margin-bottom: 0.7rem; }
+  .numeral {
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 300;
+    font-size: 2.8rem;
+    line-height: 1;
+    color: var(--gold);
+  }
+  .prayer-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 600;
+    font-size: 1.35rem;
+    line-height: 1.2;
+    letter-spacing: 0.01em;
+    margin: 0;
+    color: var(--ink);
+  }
+  .tag {
+    display: inline-block;
+    font-size: 0.74rem;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--oxblood);
+    background: var(--oxblood-wash);
+    border: 1px solid var(--oxblood-line);
+    padding: 0.25rem 0.65rem;
+    border-radius: 100px;
+    margin-bottom: 1rem;
+    font-weight: 600;
+  }
+  .prayer p { color: var(--ink); font-size: 1.09rem; margin: 0 0 1rem; }
+  .prayer p:last-of-type { margin-bottom: 0; }
+  .prayer em { color: var(--oxblood); font-style: italic; }
+  .prayer .rubric {
+    color: var(--oxblood);
+    font-style: italic;
+    font-size: 1rem;
+  }
+  .prayer .response {
+    color: var(--oxblood);
+    font-weight: 500;
+  }
+  .prayer .litany p { margin-bottom: 0.7rem; padding-left: 1.1rem; text-indent: -1.1rem; }
+  .sub-title {
+    font-family: 'EB Garamond', serif;
+    font-size: 0.8rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--oxblood);
+    font-weight: 600;
+    margin: 1.8rem 0 0.7rem;
+  }
+  .daycard {
+    border: 1px solid var(--gold-line);
+    background: var(--parchment-card);
+    border-radius: 2px;
+    padding: 1.7rem 1.5rem 1.6rem;
+  }
+  .daycard .sub-title:first-of-type { margin-top: 0.4rem; }
+  .conclusion { text-align: center; padding-top: 1rem; }
+  footer {
+    text-align: center;
+    margin-top: 4.5rem;
+    color: var(--ink-dim);
+    font-size: 0.95rem;
+    font-style: italic;
+  }
+  footer .marks {
+    color: var(--gold);
+    letter-spacing: 0.4em;
+    font-style: normal;
+    margin-bottom: 0.8rem;
+    font-size: 1rem;
+  }
+  @media (prefers-reduced-motion: no-preference) {
+    .prayer { animation: rise 0.6s ease both; }
+  }
+  @keyframes rise {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  a:focus-visible, button:focus-visible { outline: 2px solid var(--oxblood); outline-offset: 3px; }
+  @media print {
+    body { background: #fff; }
+    .howto, nav.jump { display: none; }
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <div class="ornament">&#10021; &#10021; &#10021;</div>
+  <h1>Devotion to the<br>Holy Face of Jesus</h1>
+  <p class="subhead">Reparation for blasphemy and the profanation of Sundays</p>
+  <p class="intro">
+    Tradition holds that Jesus asked for a series of prayers to be said on Sundays and Holy Days of
+    Obligation, in reparation for the sins that wound Him most in our age. This page gathers the
+    Devotion, the Chaplet, and the nine day Novena in one place.
+  </p>
+
+  <div class="howto">
+    <p class="eyebrow">How to Begin</p>
+    <ul>
+      <li>Pray the <strong>Devotion</strong> on Sundays and Holy Days of Obligation, preferably before the Blessed Sacrament or a picture of the Holy Face.</li>
+      <li>The <strong>Chaplet</strong> honors the five senses of Jesus: touch, hearing, sight, smell, and taste.</li>
+      <li>The <strong>Novena</strong> is prayed over <strong>nine days</strong>. Begin with the opening prayer, then follow each day in order.</li>
+      <li>If a day is missed, simply continue where you left off.</li>
+    </ul>
+  </div>
+
+  <nav class="jump" aria-label="Sections">
+    <a href="#devotion">The Devotion</a>
+    <a href="#chaplet">The Chaplet</a>
+    <a href="#novena">The Novena</a>
+  </nav>
+
+  <header class="part-head" id="devotion">
+    <div class="ornament">&#10021; &#10021; &#10021;</div>
+    <h2>The Devotion to the Holy Face</h2>
+    <p class="subhead">Prayers for Sundays and Holy Days of Obligation</p>
+    <p>Tradition holds that Jesus asked for these prayers to be said on Sundays and on Holy Days of Obligation, preferably before the Blessed Sacrament or before a picture of the Holy Face.</p>
+  </header>
+
+  <section class="prayer" id="offering">
+    <div class="numeral-row"><span class="numeral">I</span><h3 class="prayer-title">The Opening Offering</h3></div>
+    <span class="tag">Our Father, Hail Mary, Glory Be</span>
+    <p>Dear Lord, through the Sorrowful and Immaculate Heart of Mary, I offer Thee these prayers in reparation for the sins which offend God the most in these modern times: the sins of BLASPHEMY and the PROFANATION OF SUNDAY and Thy Holy Days of Obligation.</p>
+      <p class="rubric">Our Father&hellip; Hail Mary&hellip; Glory be&hellip;</p>
+  </section>
+
+  <div class="divider"><span>&#10021; &#10021; &#10021;</span></div>
+
+  <section class="prayer" id="golden-arrow">
+    <div class="numeral-row"><span class="numeral">II</span><h3 class="prayer-title">The Golden Arrow Prayer</h3></div>
+    
+    <p>May the most holy, most sacred, most adorable, most incomprehensible and unutterable Name of God be always praised, blessed, loved, adored and glorified in Heaven, on earth, and under the earth, by all the creatures of God, and by the Sacred Heart of Our Lord Jesus Christ in the Most Holy Sacrament of the Altar. Amen.</p>
+  </section>
+
+  <div class="divider"><span>&#10021; &#10021; &#10021;</span></div>
+
+  <section class="prayer" id="litany">
+    <div class="numeral-row"><span class="numeral">III</span><h3 class="prayer-title">Litany of the Holy Face of Jesus</h3></div>
+    
+    <p>I salute Thee, I adore Thee and I love Thee, O adorable Face of Jesus, my Beloved, noble Seal of the Divinity! outraged anew by blasphemers. I offer Thee, through the heart of Thy blessed Mother, the worship of all the Angels and Saints, most humbly beseeching Thee to repair and renew in me and in all men Thine Image disfigured by sin.</p><div class="litany"><p>O adorable Face, which was adored with profound respect by Mary and Joseph when they saw Thee for the first time, <span class="response">have mercy on us.</span></p><p>O adorable Face, which ravished with joy in the stable of Bethlehem the Angels, the shepherds and the magi, <span class="response">have mercy on us.</span></p><p>O adorable Face, which transpierced with a dart of love in the Temple the saintly old man Simeon and the prophetess Anna, <span class="response">have mercy on us.</span></p><p>O adorable Face, which filled with admiration the Doctors of the Law when Thou appeared in the Temple at the age of twelve years, <span class="response">have mercy on us.</span></p><p>O adorable Face, which possesses beauty always ancient and always new, <span class="response">have mercy on us.</span></p><p>O adorable Face, which is the masterpiece of the Holy Ghost, in which the Eternal Father is well pleased, <span class="response">have mercy on us.</span></p><p>O adorable Face, which is the ineffable mirror of the divine perfections, <span class="response">have mercy on us.</span></p></div>
+      <p>Adorable Face of Jesus, which was so mercifully bowed down on the Cross on the day of Thy Passion for the salvation of the world, once more today, in pity, bend down towards us poor sinners. Cast upon us a glance of compassion and give us Thy peace.</p><div class="litany"><p>O adorable Face, which became brilliant like the sun and radiant with glory on the Mountain of Tabor, <span class="response">have mercy on us.</span></p><p>O adorable Face, which wept and was troubled at the tomb of Lazarus, <span class="response">have mercy on us.</span></p><p>O adorable Face, which was rendered sad at the sight of Jerusalem and shed tears on that ungrateful city, <span class="response">have mercy on us.</span></p><p>O adorable Face, which was bowed down to the ground in the Garden of Olives and covered with confusion for our sins, <span class="response">have mercy on us.</span></p><p>O adorable Face, which was covered with the sweat of blood, <span class="response">have mercy on us.</span></p><p>O adorable Face, which was struck by a vile servant, covered with a veil of shame, and profaned by the sacrilegious hands of Thine enemies, <span class="response">have mercy on us.</span></p><p>O adorable Face, which, by Its divine glance, wounded the heart of St. Peter with a dart of sorrow and love, <span class="response">have mercy on us.</span></p></div>
+      <p>Be merciful to us, O my God! Do not reject our prayers when, in the midst of our afflictions, we call upon Thy Holy Name and seek, with love and confidence, Thine adorable Face.</p><div class="litany"><p>O adorable Face, which was washed and anointed by Mary and the holy women and covered with a shroud, <span class="response">have mercy on us.</span></p><p>O adorable Face, which was all resplendent with glory and beauty on the day of the Resurrection, <span class="response">have mercy on us.</span></p><p>O adorable Face, which is hidden in the Eucharist, <span class="response">have mercy on us.</span></p><p>O adorable Face, which will appear at the end of time in the clouds with great power and great majesty, <span class="response">have mercy on us.</span></p><p>O adorable Face, which will make sinners tremble, <span class="response">have mercy on us.</span></p><p>O adorable Face, which will fill the just with joy for all eternity, <span class="response">have mercy on us.</span></p><p>O adorable Face, which merits all our reverence, our homage, and our adoration, <span class="response">have mercy on us.</span></p></div>
+      <p class="response" style="margin-top:1.2rem">O Lord, show us Thy Face and we shall be saved! O Lord, show us Thy Face and we shall be saved! O Lord, show us Thy Face and we shall be saved!</p>
+  </section>
+
+  <div class="divider"><span>&#10021; &#10021; &#10021;</span></div>
+
+  <section class="prayer" id="offer-father">
+    <div class="numeral-row"><span class="numeral">IV</span><h3 class="prayer-title">Offering the Holy Face to God the Father</h3></div>
+    <span class="tag">To appease His justice and draw down mercy upon us</span>
+    <p>Almighty and Eternal Father, since it has pleased Our Divine Savior to reveal to mankind in modern times the power residing in His Holy Face, we now avail ourselves of this Treasure in our great need. Since Our Savior Himself promised that by offering to Thee His Holy Face, disfigured in the Passion, we can procure the settlement of all the affairs of our household, and that nothing will be refused to us, we now come before Thy throne.</p>
+      <p>Eternal Father, turn away Thine angry gaze from our guilty people, whose face has become unsightly in Thine eyes. Look, instead, upon the Face of Thy Beloved Son; for this is the Face of Him in whom Thou art well pleased. We now offer Thee His Holy Face, covered with blood, sweat, dust, spittle and shame, in reparation for the worst crimes of our age, which are atheism, blasphemy, and the desecration of Thy holy days. We, thus, hope to appease Thine anger justly provoked against us. The All-Merciful Advocate opens His mouth to plead our cause; listen to His cries, behold His tears, O God, and through the merits of His Holy Face hearken to Him when He intercedes for us poor miserable sinners. Amen.</p>
+  </section>
+
+  <div class="divider"><span>&#10021; &#10021; &#10021;</span></div>
+
+  <header class="part-head" id="chaplet">
+    <div class="ornament">&#10021; &#10021; &#10021;</div>
+    <h2>Chaplet of the Holy Face of Jesus</h2>
+    <p class="subhead">Reparation through the five senses of Our Lord</p>
+    <p>This chaplet makes reparation for the sins of blasphemy committed against Our Lord’s Holy Face through His five senses, and asks God to scatter His enemies.</p>
+  </header>
+
+  <section class="prayer" id="chaplet-begin">
+    <div class="numeral-row"><span class="numeral">✥</span><h3 class="prayer-title">Opening Prayers</h3></div>
+    
+    <p class="rubric">Begin with:</p>
+      <p>O God, come to my assistance; O Lord make haste to help me.</p>
+      <p>Glory be to the Father, and to the Son, and to the Holy Spirit. As it was in the beginning, is now, and ever shall be world without end. Amen.</p>
+  </section>
+
+  <div class="divider"><span>&#10021; &#10021; &#10021;</span></div>
+
+  <section class="prayer" id="sense-1">
+    <div class="numeral-row"><span class="numeral">1</span><h3 class="prayer-title">The Sense of Touch</h3></div>
+    <span class="tag">Five senses of Jesus</span>
+    <p><em>In honor of the sense of TOUCH of Jesus&hellip;</em></p>
+    <p class="response">My Jesus Mercy.</p>
+    <p class="rubric">Glory be&hellip;</p>
+    <p>Arise, O Lord! and let Thy enemies be scattered, and let them that hate Thee flee from before Thy Face.</p>
+    <p class="rubric">Pray six times.</p>
+  </section>
+
+  <div class="divider"><span>&#10021; &#10021; &#10021;</span></div>
+
+  <section class="prayer" id="sense-2">
+    <div class="numeral-row"><span class="numeral">2</span><h3 class="prayer-title">The Sense of Hearing</h3></div>
+    <span class="tag">Five senses of Jesus</span>
+    <p><em>In honor of the sense of HEARING of Jesus&hellip;</em></p>
+    <p class="response">My Jesus Mercy.</p>
+    <p class="rubric">Glory be&hellip;</p>
+    <p>Arise, O Lord! and let Thy enemies be scattered, and let them that hate Thee flee from before Thy Face.</p>
+    <p class="rubric">Pray six times.</p>
+  </section>
+
+  <div class="divider"><span>&#10021; &#10021; &#10021;</span></div>
+
+  <section class="prayer" id="sense-3">
+    <div class="numeral-row"><span class="numeral">3</span><h3 class="prayer-title">The Sense of Sight</h3></div>
+    <span class="tag">Five senses of Jesus</span>
+    <p><em>In honor of the sense of SIGHT of Jesus&hellip;</em></p>
+    <p class="response">My Jesus Mercy.</p>
+    <p class="rubric">Glory be&hellip;</p>
+    <p>Arise, O Lord! and let Thy enemies be scattered, and let them that hate Thee flee from before Thy Face.</p>
+    <p class="rubric">Pray six times.</p>
+  </section>
+
+  <div class="divider"><span>&#10021; &#10021; &#10021;</span></div>
+
+  <section class="prayer" id="sense-4">
+    <div class="numeral-row"><span class="numeral">4</span><h3 class="prayer-title">The Sense of Smell</h3></div>
+    <span class="tag">Five senses of Jesus</span>
+    <p><em>In honor of the sense of SMELL of Jesus&hellip;</em></p>
+    <p class="response">My Jesus Mercy.</p>
+    <p class="rubric">Glory be&hellip;</p>
+    <p>Arise, O Lord! and let Thy enemies be scattered, and let them that hate Thee flee from before Thy Face.</p>
+    <p class="rubric">Pray six times.</p>
+  </section>
+
+  <div class="divider"><span>&#10021; &#10021; &#10021;</span></div>
+
+  <section class="prayer" id="sense-5">
+    <div class="numeral-row"><span class="numeral">5</span><h3 class="prayer-title">The Sense of Taste</h3></div>
+    <span class="tag">Five senses of Jesus</span>
+    <p><em>In honor of the sense of TASTE of Jesus&hellip;</em></p>
+    <p class="response">My Jesus Mercy.</p>
+    <p class="rubric">Glory be&hellip;</p>
+    <p>Arise, O Lord! and let Thy enemies be scattered, and let them that hate Thee flee from before Thy Face.</p>
+    <p class="rubric">Pray six times.</p>
+  </section>
+
+  <div class="divider"><span>&#10021; &#10021; &#10021;</span></div>
+
+  <section class="prayer conclusion" id="chaplet-close">
+    <div class="numeral-row" style="justify-content:center;"><span class="numeral">&#10021;</span></div>
+    <p class="prayer-title" style="display:block; margin-bottom:1rem;">Closing the Chaplet</p>
+    <p class="response">My Jesus Mercy.</p>
+    <p class="rubric">Glory be&hellip;</p>
+    <p><em>In honor of the three years of our Lord&rsquo;s public ministry on Earth&hellip;</em></p>
+    <p>Arise, O Lord! and let Thy enemies be scattered, and let them that hate Thee flee from before Thy Face.</p>
+    <p class="rubric">Pray three times.</p>
+    <p class="response">God, our Protector, look on us and look on the Face of Thy Christ. Amen.</p>
+  </section>
+
+  <div class="divider"><span>&#10021; &#10021; &#10021;</span></div>
+
+  <header class="part-head" id="novena">
+    <div class="ornament">&#10021; &#10021; &#10021;</div>
+    <h2>Novena to the Holy Face of Jesus</h2>
+    <p class="subhead">Nine days of reparation and mercy</p>
+    <p>A nine day devotion honoring the sacred countenance of Our Lord as it appeared during His Passion. It grew out of the revelations reported by Sister Marie of St. Peter (1816 to 1848), a Discalced Carmelite nun in Tours, France, who said Jesus desired reparation for blasphemy and the profanation of Sundays.</p>
+  </header>
+
+  <nav class="jump days" aria-label="Novena days"><a href="#day-1">1</a><a href="#day-2">2</a><a href="#day-3">3</a><a href="#day-4">4</a><a href="#day-5">5</a><a href="#day-6">6</a><a href="#day-7">7</a><a href="#day-8">8</a><a href="#day-9">9</a></nav>
+
+  <section class="prayer" id="day-1">
+    <div class="numeral-row"><span class="numeral">1</span><h3 class="prayer-title">Day 1</h3></div>
+    <div class="daycard">
+      <p class="sub-title">Opening Prayer</p>
+      <p>O Most Holy and Blessed Trinity, through the intercession of Holy Mary, whose soul was pierced through by a sword of sorrow at the sight of the passion of her Divine Son, we ask Your help in making a perfect Novena of reparation with Jesus, united with all His sorrows, love and total abandonment. We now implore all the Angels and Saints to intercede for us as we pray this Holy Novena to the Most Holy Face of Jesus and for the glory of the most Holy Trinity, Father, Son and Holy Spirit. Amen.</p>
+      <p class="sub-title">Psalm 51:3-4</p>
+      <p>Have mercy on me, O God in Your goodness, in Your great tenderness wipe away my faults: wash me clean of my guilt, purify me from my sin.</p>
+      <p class="sub-title">Prayer of the Day</p>
+      <p>O most Holy Face of Jesus, look with tenderness on us, who are sinners. You are a merciful God, full of love and compassion. Keep us pure of heart, so that we may see You always.</p>
+      <p>Mary, our Mother, intercede for us; St. Joseph, pray for us.</p>
+      <p class="sub-title">Petitions</p>
+      <p>Through the merits of Your Precious Blood and Your Holy Face, O Jesus, grant us pardon and mercy, and hear our petitions…</p>
+      <p class="rubric">(Mention your petitions now.)</p>
+      <p class="sub-title">Prayer to Our Almighty Father</p>
+      <p>Almighty Father, come into our hearts, and so fill us with Your love that forsaking all evil desires, we may embrace You, our only good. Show us, O Lord our God, what You are to us. Say to our souls, “I am Your salvation”; speak so that we may hear. Our hearts are before You; open our ears; let us hasten after Your voice.</p>
+      <p>Hide not Your Face from us, we beseech You, O Lord. Open our hearts so that You may enter in. Repair the ruined mansions, that You may dwell therein. Hear us, O Heavenly Father, for the sake of Your only Son, Our Lord Jesus Christ, who lives and reigns with You and the Holy Spirit, one God, now and forever. Amen.</p>
+      <p class="sub-title">Closing</p>
+      <p class="rubric">Our Father&hellip; Hail Mary&hellip; (three times) Glory be&hellip;</p>
+      <p class="response">O Bleeding Face, O Face Divine, be every adoration Thine. O Bleeding Face, O Face Divine, be every adoration Thine. O Bleeding Face, O Face Divine, be every adoration Thine.</p>
+    </div>
+  </section>
+
+  <div class="divider"><span>&#10021; &#10021; &#10021;</span></div>
+
+  <section class="prayer" id="day-2">
+    <div class="numeral-row"><span class="numeral">2</span><h3 class="prayer-title">Day 2</h3></div>
+    <div class="daycard">
+      <p class="sub-title">Opening Prayer</p>
+      <p>O Most Holy and Blessed Trinity, through the intercession of Holy Mary, whose soul was pierced through by a sword of sorrow at the sight of the passion of her Divine Son, we ask Your help in making a perfect Novena of reparation with Jesus, united with all His sorrows, love and total abandonment. We now implore all the Angels and Saints to intercede for us as we pray this Holy Novena to the Most Holy Face of Jesus and for the glory of the most Holy Trinity, Father, Son and Holy Spirit. Amen.</p>
+      <p class="sub-title">Psalm 51:5-6a</p>
+      <p>My offenses truly I know them; My sin is always before me. Against You, You alone, have I sinned; What is evil in Your sight I have done.</p>
+      <p class="sub-title">Prayer of the Day</p>
+      <p>Most Holy Face of Jesus, we are truly sorry that we have hurt You so much by constantly doing what is wrong; and for all the good works we have failed to do. Immaculate Heart of Mary, St. Joseph, intercede for us, help us to console the Most Holy Face of Jesus. Pray that we may share in the tremendous love Thou hast for one another, and for the most Holy and Blessed Trinity. Amen.</p>
+      <p class="sub-title">Petitions</p>
+      <p>Through the merits of Your Precious Blood and Your Holy Face, O Jesus, grant us pardon and mercy, and hear our petitions…</p>
+      <p class="rubric">(Mention your petitions now.)</p>
+      <p class="sub-title">Prayer to the Holy Spirit</p>
+      <p>Come, Holy Spirit, Sanctifier, all powerful God of love, Thou who didst fill the Virgin Mary with grace, Thou who didst wonderfully transform the hearts of the apostles. Thou who didst endow all Thy martyrs with a miraculous heroism, home and sanctify us, illumine our minds, strengthen our wills, purify our consciences, rectify our judgments, set our hearts on fire and preserve us from the misfortune of resisting Thine inspirations. We consecrate to Thee our understanding, our heart and our will, our whole being for time and for eternity. May our understanding be always submissive to Thy heavenly inspirations and to the teachings of Thy Holy Catholic Church, of which Thou art the infallible guide; May our heart be ever inflamed with love of God and neighbor, may our will be ever conformed to the divine will, and may our whole life be a faithful imitation of the life and virtues of our Lord and Savior, Jesus Christ, to whom with the Father and Thee be honor and glory forever. Amen.</p>
+      <p class="sub-title">Closing</p>
+      <p class="rubric">Our Father&hellip; Hail Mary&hellip; (three times) Glory be&hellip;</p>
+      <p class="response">O Bleeding Face, O Face Divine, be every adoration Thine. O Bleeding Face, O Face Divine, be every adoration Thine. O Bleeding Face, O Face Divine, be every adoration Thine.</p>
+    </div>
+  </section>
+
+  <div class="divider"><span>&#10021; &#10021; &#10021;</span></div>
+
+  <section class="prayer" id="day-3">
+    <div class="numeral-row"><span class="numeral">3</span><h3 class="prayer-title">Day 3</h3></div>
+    <div class="daycard">
+      <p class="sub-title">Opening Prayer</p>
+      <p>O Most Holy and Blessed Trinity, through the intercession of Holy Mary, whose soul was pierced through by a sword of sorrow at the sight of the passion of her Divine Son, we ask Your help in making a perfect Novena of reparation with Jesus, united with all His sorrows, love and total abandonment. We now implore all the Angels and Saints to intercede for us as we pray this Holy Novena to the Most Holy Face of Jesus and for the glory of the most Holy Trinity, Father, Son and Holy Spirit. Amen.</p>
+      <p class="sub-title">Psalm 51:6b-7</p>
+      <p>You are just when You pass sentence on me, blameless when You give judgment. You know I was born guilty, a sinner from the moment of conception.</p>
+      <p class="sub-title">Prayer of the Day</p>
+      <p>O Jesus! Cast upon us a look of mercy: turn Your Face towards each of us… as You did to Veronica; not that we may see it with our bodily eyes, for this we do not deserve, But turn it towards our hearts, so that, remembering You, we may ever draw from this fountain of strength the vigor necessary to sustain the combats of life. Amen.</p>
+      <p>Mary, our Mother, and St. Joseph, pray for us.</p>
+      <p class="sub-title">Petitions</p>
+      <p>Through the merits of Your Precious Blood and Your Holy Face, O Jesus, grant us pardon and mercy, and hear our petitions…</p>
+      <p class="rubric">(Mention your petitions now.)</p>
+      <p class="sub-title">Prayer of St. Francis</p>
+      <p>All highest, glorious God, cast Your light into the darkness of our hearts, give us true faith, firm hope, perfect charity, and profound humility, so that with wisdom, courage, and perception, O Lord, we may do what is truly Your holy will. Amen.</p>
+      <p class="sub-title">To the Angels and Saints</p>
+      <p>We salute you, through the Holy Face and Sacred Heart of Jesus, O all You Holy Angels and Saints of God. We rejoice in your glory, and we give thanks to our Lord for all the benefits which He has showered upon you; we praise Him, and glorify Him, and for an increase of Your joy and honor, we offer Him the most Holy Face and gentle Heart of Jesus. Pray that we may become formed according to the heart of God. Amen.</p>
+      <p class="sub-title">Closing</p>
+      <p class="rubric">Our Father&hellip; Hail Mary&hellip; (three times) Glory be&hellip;</p>
+      <p class="response">O Bleeding Face, O Face Divine, be every adoration Thine. O Bleeding Face, O Face Divine, be every adoration Thine. O Bleeding Face, O Face Divine, be every adoration Thine.</p>
+    </div>
+  </section>
+
+  <div class="divider"><span>&#10021; &#10021; &#10021;</span></div>
+
+  <section class="prayer" id="day-4">
+    <div class="numeral-row"><span class="numeral">4</span><h3 class="prayer-title">Day 4</h3></div>
+    <div class="daycard">
+      <p class="sub-title">Opening Prayer</p>
+      <p>O Most Holy and Blessed Trinity, through the intercession of Holy Mary, whose soul was pierced through by a sword of sorrow at the sight of the passion of her Divine Son, we ask Your help in making a perfect Novena of reparation with Jesus, united with all His sorrows, love and total abandonment. We now implore all the Angels and Saints to intercede for us as we pray this Holy Novena to the Most Holy Face of Jesus and for the glory of the most Holy Trinity, Father, Son and Holy Spirit. Amen.</p>
+      <p class="sub-title">Psalm 51:8-9</p>
+      <p>Indeed You love truth in the heart; then in the secret of my heart teach me Wisdom. O purify me, then I shall be clean; O wash me. I shall be whiter than snow.</p>
+      <p class="sub-title">Prayer of the Day</p>
+      <p>O Lord Jesus, who has said, learn from me for I am meek and gentle of heart, and who did manifest upon Thy Holy Face the sentiments of Thy divine heart, grant that we may love to come frequently and meditate upon Thy divine features. May we read there Thy gentleness and Thy humility, and learn how to form our hearts in the practice of these two virtues which Thou desires to see shine in Thy servants.</p>
+      <p>Mary, our Mother, and St. Joseph, help us.</p>
+      <p class="sub-title">Petitions</p>
+      <p>Through the merits of Your Precious Blood and Your Holy Face, O Jesus, grant us pardon and mercy, and hear our petitions…</p>
+      <p class="rubric">(Mention your petitions now.)</p>
+      <p class="sub-title">Prayer in Honor of the Dolors of the Blessed Virgin</p>
+      <p>O Most Holy and afflicted Virgin, Queen of Martyrs! Who stood beneath the cross, witnessing the agony of your dying Son, look down with a mother’s tenderness and pity on us, as we kneel before you to venerate your Dolors and place our requests, with filial confidence, in the sanctuary of your wounded heart.</p>
+      <p>Present them on our behalf to Jesus, Through the merits of His most sacred Passion and Death, together with your sufferings at the foot of the cross, and through the united efficacy of both, obtain the favor which we humbly ask.</p>
+      <p>To whom shall we go in our wants and miseries if not to you. O Mother of Mercy, who having so deeply drunk of the chalice of your Son, graciously alleviate the sufferings of those who still sigh in this land of exile. Amen.</p>
+      <p class="sub-title">Prayer to the Souls in Purgatory</p>
+      <p>My Jesus, by the sorrows You suffered in Your agony in the Garden, in Your scourging and crowning with thorns, in the way to Calvary, in Your Crucifixion and Death, have mercy on the souls in Purgatory, and especially on those that are most forsaken. Deliver them from the dire torments they endure. Call them and admit them to Your most sweet embrace in Paradise. Amen.</p>
+      <p class="sub-title">Closing</p>
+      <p class="rubric">Our Father&hellip; Hail Mary&hellip; (three times) Glory be&hellip;</p>
+      <p class="response">O Bleeding Face, O Face Divine, be every adoration Thine. O Bleeding Face, O Face Divine, be every adoration Thine. O Bleeding Face, O Face Divine, be every adoration Thine.</p>
+    </div>
+  </section>
+
+  <div class="divider"><span>&#10021; &#10021; &#10021;</span></div>
+
+  <section class="prayer" id="day-5">
+    <div class="numeral-row"><span class="numeral">5</span><h3 class="prayer-title">Day 5</h3></div>
+    <div class="daycard">
+      <p class="sub-title">Opening Prayer</p>
+      <p>O Most Holy and Blessed Trinity, through the intercession of Holy Mary, whose soul was pierced through by a sword of sorrow at the sight of the passion of her Divine Son, we ask Your help in making a perfect Novena of reparation with Jesus, united with all His sorrows, love and total abandonment. We now implore all the Angels and Saints to intercede for us as we pray this Holy Novena to the Most Holy Face of Jesus and for the glory of the most Holy Trinity, Father, Son and Holy Spirit. Amen.</p>
+      <p class="sub-title">Psalm 51:10-11</p>
+      <p>Make me hear rejoicing and gladness, that the bones you have crushed may revive. From my sins turn away Your Face, and blot out all my guilt.</p>
+      <p class="sub-title">Prayer of the Day</p>
+      <p>Holy Face of Jesus, Sacred Countenance of God, how great is Your patience with humankind, how infinite Your forgiveness. We are sinners, yet You love us. This gives us courage. For the glory of Your Holy Face and of the Blessed Trinity, hear and answer us.</p>
+      <p>Mary our Mother, intercede for us, St. Joseph, pray for us.</p>
+      <p class="sub-title">Petitions</p>
+      <p>Through the merits of Your Precious Blood and Your Holy Face, O Jesus, grant us pardon and mercy, and hear our petitions…</p>
+      <p class="rubric">(Mention your petitions now.)</p>
+      <p class="sub-title">Prayer to St. Joseph</p>
+      <p>Dear St. Joseph! Adopt us as thy children, take charge of our salvation; watch over us day and night; preserve us from occasions of sin; obtain for us purity of body and soul, and the spirit of prayer, through thy intercession with Jesus, grant us a spirit of sacrifice, of humility and self-denial; obtain for us a burning love for Jesus in the Blessed Sacrament and a sweet, tender love for Mary, our Mother. St. Joseph, be with us in life, be with us in death and obtain for us a favorable judgment from Jesus, our merciful Savior. Amen.</p>
+      <p class="sub-title">Closing</p>
+      <p class="rubric">Our Father&hellip; Hail Mary&hellip; (three times) Glory be&hellip;</p>
+      <p class="response">O Bleeding Face, O Face Divine, be every adoration Thine. O Bleeding Face, O Face Divine, be every adoration Thine. O Bleeding Face, O Face Divine, be every adoration Thine.</p>
+    </div>
+  </section>
+
+  <div class="divider"><span>&#10021; &#10021; &#10021;</span></div>
+
+  <section class="prayer" id="day-6">
+    <div class="numeral-row"><span class="numeral">6</span><h3 class="prayer-title">Day 6</h3></div>
+    <div class="daycard">
+      <p class="sub-title">Opening Prayer</p>
+      <p>O Most Holy and Blessed Trinity, through the intercession of Holy Mary, whose soul was pierced through by a sword of sorrow at the sight of the passion of her Divine Son, we ask Your help in making a perfect Novena of reparation with Jesus, united with all His sorrows, love and total abandonment. We now implore all the Angels and Saints to intercede for us as we pray this Holy Novena to the Most Holy Face of Jesus and for the glory of the most Holy Trinity, Father, Son and Holy Spirit. Amen.</p>
+      <p class="sub-title">Psalm 51:12-13</p>
+      <p>A pure heart create for us O God, put a steadfast spirit within us. Do not cast us away from Your presence nor deprive us of Your Holy Spirit.</p>
+      <p class="sub-title">Prayer of the Day</p>
+      <p>May our hearts be cleansed, O Lord, by the inpouring of the Holy Spirit, and may He render them fruitful by watering them with His heavenly dew. Mary, the most chaste spouse of the Holy Spirit, intercede for us, St. Joseph pray for us.</p>
+      <p class="sub-title">Petitions</p>
+      <p>Through the merits of Your Precious Blood and Your Holy Face, O Jesus, grant us pardon and mercy, and hear our petitions…</p>
+      <p class="rubric">(Mention your petitions now.)</p>
+      <p class="sub-title">Prayer to St. Michael the Archangel</p>
+      <p>O Victorious Prince, most humble guardian of the Church of God and of faithful souls, who with such charity and zeal took part in so many conflicts and gained such great victories over the enemy, for the conservation and protection of the honor and glory we all owe to God, as well as for the promotion of our salvation; come, we pray Thee, to our assistance, for we are continually besieged with such great perils by our enemies, the flesh, the world, and the devil, and as Thou wast a leader for the people of God through the desert, so also be our faithful leader, and companion, through the desert of this world, until Thou conduct us safely into the happy land of the living, in that blessed fatherland from which we are all exiles. Amen.</p>
+      <p class="sub-title">Closing</p>
+      <p class="rubric">Our Father&hellip; Hail Mary&hellip; (three times) Glory be&hellip;</p>
+      <p class="response">O Bleeding Face, O Face Divine, be every adoration Thine. O Bleeding Face, O Face Divine, be every adoration Thine. O Bleeding Face, O Face Divine, be every adoration Thine.</p>
+    </div>
+  </section>
+
+  <div class="divider"><span>&#10021; &#10021; &#10021;</span></div>
+
+  <section class="prayer" id="day-7">
+    <div class="numeral-row"><span class="numeral">7</span><h3 class="prayer-title">Day 7</h3></div>
+    <div class="daycard">
+      <p class="sub-title">Opening Prayer</p>
+      <p>O Most Holy and Blessed Trinity, through the intercession of Holy Mary, whose soul was pierced through by a sword of sorrow at the sight of the passion of her Divine Son, we ask Your help in making a perfect Novena of reparation with Jesus, united with all His sorrows, love and total abandonment. We now implore all the Angels and Saints to intercede for us as we pray this Holy Novena to the Most Holy Face of Jesus and for the glory of the most Holy Trinity, Father, Son and Holy Spirit. Amen.</p>
+      <p class="sub-title">Psalm 51:14-15</p>
+      <p>Give me again the joy of Your help, with a spirit of fervor sustain me, that I may teach transgressors Your ways and sinners may return to you.</p>
+      <p class="sub-title">Prayer of the Day</p>
+      <p>Lord Jesus! After contemplating Thy features, disfigured by grief, after meditating upon Thy passion with compunction and love, how can our hearts fail to be inflamed with a holy hatred of sin, which even now outrages Thy Adorable Face!</p>
+      <p>Lord, suffer us not to be content with mere compassion, but give us grace so closely to follow Thee in this Calvary, so that the opprobrium destined for Thee may fall on us, O Jesus, that thus we may have a share, small though it may be, in expiation of sin. Amen.</p>
+      <p>Mary, our Mother, intercede for us. St. Joseph pray for us.</p>
+      <p class="sub-title">Petitions</p>
+      <p>Through the merits of Your Precious Blood and Your Holy Face, O Jesus, grant us pardon and mercy, and hear our petitions…</p>
+      <p class="rubric">(Mention your petitions now.)</p>
+      <p class="sub-title">Prayer in Honor of Mary</p>
+      <p>Hail Mary, Daughter of God the Father! Hail Mary, Mother of God the Son! Hail Mary, Spouse of the Holy Spirit! Hail Mary, Temple of the Most Holy Trinity! Hail Mary, our mistress, our wealth, our mystic rose. Queen of our hearts, our Mother, our life, our sweetness and our dearest hope! We are all Thine, and all we have is Thine. O Virgin blessed above all things, may Thy soul be in us to magnify the Lord; may Thy spirit be in us to rejoice in God. Place Thyself, O faithful Virgin, as a seal upon our hearts, that in Thee and through Thee we may be found faithful to God. Grant, most gracious Virgin, that we may be numbered among those whom Thou art pleased to love, to teach and to guide, to favor and to protect as Thy children. Grant that with the help of Thy love, we may despise all earthly consolation and cling to heavenly things, until through the Holy Spirit, Thy faithful spouse, and through Thee, His faithful spouse, Jesus Christ, Thy Son, be formed within us for the glory of the Father. Amen.</p>
+      <p class="sub-title">Closing</p>
+      <p class="rubric">Our Father&hellip; Hail Mary&hellip; (three times) Glory be&hellip;</p>
+      <p class="response">O Bleeding Face, O Face Divine, be every adoration Thine. O Bleeding Face, O Face Divine, be every adoration Thine. O Bleeding Face, O Face Divine, be every adoration Thine.</p>
+    </div>
+  </section>
+
+  <div class="divider"><span>&#10021; &#10021; &#10021;</span></div>
+
+  <section class="prayer" id="day-8">
+    <div class="numeral-row"><span class="numeral">8</span><h3 class="prayer-title">Day 8</h3></div>
+    <div class="daycard">
+      <p class="sub-title">Opening Prayer</p>
+      <p>O Most Holy and Blessed Trinity, through the intercession of Holy Mary, whose soul was pierced through by a sword of sorrow at the sight of the passion of her Divine Son, we ask Your help in making a perfect Novena of reparation with Jesus, united with all His sorrows, love and total abandonment. We now implore all the Angels and Saints to intercede for us as we pray this Holy Novena to the Most Holy Face of Jesus and for the glory of the most Holy Trinity, Father, Son and Holy Spirit. Amen.</p>
+      <p class="sub-title">Psalm 51:16-17</p>
+      <p>O rescue me, God my helper, and my tongue shall ring out Your goodness. O Lord, open my lips, and my mouth shall declare Your praise.</p>
+      <p class="sub-title">Prayer of the Day</p>
+      <p>Most merciful Face of Jesus, who in this vale of tears was so moved by our misfortunes to call Yourself the healer of the sick, and the good Shepherd of the souls gone astray, allow not Satan to draw us away from You, but keep us always under Your loving protection, together with all souls who endeavor to console You.</p>
+      <p>Mary, our Mother, intercede for us. St. Joseph, pray for us.</p>
+      <p class="sub-title">Petitions</p>
+      <p>Through the merits of Your Precious Blood and Your Holy Face, O Jesus, grant us pardon and mercy, and hear our petitions…</p>
+      <p class="rubric">(Mention your petitions now.)</p>
+      <p class="sub-title">Prayer to St. Peter</p>
+      <p>O glorious St. Peter, who in return for thy lively and generous faith, thy profound and sincere humility and thy burning love, was honored by Jesus Christ with singular privileges, and in particular, with the leadership of the other apostles and the primacy of the whole Church, of which thou was made the foundation stone, do thou obtain for us the grace of a lively faith, that shall not fear to profess itself openly in its entirety and in all of its manifestations, even to the shedding of blood, if occasion should demand it, and to the sacrifice of life itself in preference to surrender. Obtain for us likewise a sincere loyalty to our Holy Mother the Church. Grant that we may ever remain most closely and sincerely united to the Holy Father, who is the heir of thy faith and of thy authority, the one true visible head of the Catholic Church. Grant, moreover, that we may follow, in all humility and meekness, the Church’s teachings and counsels and may be obedient to all her precepts, in order to be able, here on earth, to enjoy a peace that is sure and undisturbed, and to attain one day in heaven to everlasting happiness. Amen.</p>
+      <p class="sub-title">Closing</p>
+      <p class="rubric">Our Father&hellip; Hail Mary&hellip; (three times) Glory be&hellip;</p>
+      <p class="response">O Bleeding Face, O Face Divine, be every adoration Thine. O Bleeding Face, O Face Divine, be every adoration Thine. O Bleeding Face, O Face Divine, be every adoration Thine.</p>
+    </div>
+  </section>
+
+  <div class="divider"><span>&#10021; &#10021; &#10021;</span></div>
+
+  <section class="prayer" id="day-9">
+    <div class="numeral-row"><span class="numeral">9</span><h3 class="prayer-title">Day 9</h3></div>
+    <div class="daycard">
+      <p class="sub-title">Prayer to the Holy Trinity</p>
+      <p>Most Holy Trinity, Godhead indivisible, Father, Son and Holy Spirit, our first beginning and our last end. Since You have made us after Your own image and likeness, grant that all the thoughts of our minds, all the words of our tongues, all the affections of our hearts, and all our actions, may be always conformed to Your most Holy Will, so that, after having seen You here on earth in appearances and in a dark manner by the means of faith, we may come at last to contemplate You face to face, in the perfect possession of You forever in paradise. Amen.</p>
+      <p class="sub-title">Act of Consecration</p>
+      <p>O Lord Jesus, we believe most firmly in You, we love You. You are the Eternal Son of God and the Son Incarnate of the Blessed Virgin Mary. You are the Lord and Absolute Ruler of all creation. We acknowledge You, therefore, as the Universal Sovereign of all creatures. You are the Lord and Supreme Ruler of all mankind, and we, in acknowledging this Your dominion, consecrate ourselves to You now and forever.</p>
+      <p>Loving Jesus, we place our family under the protection of Your Holy Face, and of Your Virgin Mother, Mary most sorrowful. We promise to be faithful to You for the rest of our lives and to observe with fidelity Your Holy Commandments. We will never deny before men, You and Your Divine rights over us and all mankind.</p>
+      <p>Grant us the grace to never sin again; nevertheless, should we fail, O Divine Savior, have mercy on us and restore us to Your grace. Radiate Your Divine Countenance upon us and bless us now and forever. Embrace us at the hour of death in Your Kingdom for all eternity, through the intercession of Your Blessed Mother, of all Your Saints who behold You in Heaven, and the just who glorify You on earth. O Jesus, be mindful of us forever and never forsake us; protect our family.</p>
+      <p>O Mother of Sorrows, by the eternal glory which you enjoy in Heaven, through the merits of your bitter anguish in the Sacred Passion of your Beloved Son, our Lord Jesus Christ, obtain for us the grace that the Precious Blood, shed by Jesus for the redemption of our souls, be not shed for us in vain. We love you, O Mary. Embrace us and bless us, O Mother. Protect us in life and in death. Amen.</p>
+      <p class="sub-title">Closing</p>
+      <p>Glory be to the Father, and to the Son, and to the Holy Spirit. As it was in the beginning, is now, and ever shall be, world without end. Amen.</p>
+    </div>
+  </section>
+
+
+  <footer>
+    <div class="marks">&#10021; &#10021; &#10021;</div>
+    O Lord, show us Thy Face and we shall be saved.
+  </footer>
+
+</div>
+</body>
+</html>
